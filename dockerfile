@@ -7,7 +7,7 @@ COPY . /go/src/k8s.io/kube-state-metrics/
 
 RUN make build-local
 
-FROM gcr.io/distroless/static:latest
+FROM gcr.io/distroless/static:v2.2.1
 COPY --from=builder /go/src/k8s.io/kube-state-metrics/kube-state-metrics /
 
 USER nobody
